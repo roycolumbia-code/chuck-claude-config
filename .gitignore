@@ -1,0 +1,7 @@
+# Cache e file temporanei
+cache/
+*.log
+*.tmp
+
+# File specifici del device
+.DS_Store

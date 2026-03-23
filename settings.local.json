@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_ms365__outlook_email_search",
+      "mcp__claude_ai_ms365__outlook_calendar_search",
+      "mcp__claude_ai_Slack__slack_search_public",
+      "mcp__plugin_Notion_notion__notion-search",
+      "mcp__plugin_serena_serena__write_memory",
+      "Bash(unzip:*)",
+      "Bash(python3:*)",
+      "mcp__plugin_serena_serena__list_dir",
+      "mcp__plugin_serena_serena__read_file",
+      "Bash(sed:*)",
+      "mcp__claude_ai_ms365__read_resource",
+      "Bash(python3 -c \"import subprocess; print\\(subprocess.run\\([''open'', ''--version''], capture_output=True\\).stdout\\)\")",
+      "Bash(python3 -:*)",
+      "Bash(pip3 install:*)",
+      "mcp__plugin_claude-mem_mcp-search__search",
+      "mcp__claude_ai_Gmail__gmail_search_messages",
+      "mcp__plugin_slack_slack__slack_send_message",
+      "mcp__claude_ai_Google_Calendar__gcal_create_event",
+      "Bash(strings \"/Users/royrigamonti/chuck/montreal/Air Canada - 15 Mar 2026: Milan - Montréal \\(Booking reference: AZMUYI\\) • roy@columbiatransport.it.pdf\" | grep -E \"\\(flight|Flight|volo|AZMUYI|depart|arriv|YUL|MXP|LIN|BGY|FCO|AC[0-9]|time|Time|gate|Gate|seat|Seat|class|Class|baggage|Baggage|economy|Economy|business|Business|terminal|Terminal|check\\)\" | head -50)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_fill_form",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "mcp__plugin_playwright_playwright__browser_install",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "mcp__plugin_playwright_playwright__browser_tabs",
+      "Bash(cd /Users/royrigamonti/chuck/BI && python3 -c \"\nimport openpyxl\nwb = openpyxl.load_workbook\\('CASH FLOW BUDGET 2026 v2.xlsx'\\)\nws = wb.active\nprint\\('Struttura file:'\\)\nfor row in ws.iter_rows\\(min_row=1, max_row=ws.max_row, min_col=1, max_col=4, values_only=True\\):\n    if row[0] is not None or any\\(v is not None for v in row[1:]\\):\n        label = str\\(row[0]\\)[:55] if row[0] else ''\n        vals = [f'{v:>12,.2f}' if isinstance\\(v, \\(int, float\\)\\) else \\(str\\(v\\)[:12] if v else '            '\\) for v in row[1:4]]\n        print\\(f'{label:<55} | {vals[0]} | {vals[1]} | {vals[2]}'\\)\n\")",
+      "Bash(pkill -x \"Google Chrome\" && sleep 2 && echo \"Chrome chiuso\")",
+      "Bash(uvx --from git+https://github.com/oraios/serena serena start-mcp-server --help 2>/dev/null | head -30)",
+      "Bash(grep -r \"beone\\\\|qlik\\\\|beonanalytics\\\\|analytics\" /Users/royrigamonti/chuck --include=\"*.md\" --include=\"*.txt\" --include=\"*.py\" --include=\"*.sh\" -l 2>/dev/null | head -10)",
+      "mcp__ruflo__system_status",
+      "mcp__ruflo__swarm_init",
+      "mcp__ruflo__agent_spawn",
+      "Skill(update-config)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "claude-flow"
+  ]
+}
