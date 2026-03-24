@@ -35,7 +35,8 @@
       "mcp__ruflo__system_status",
       "mcp__ruflo__swarm_init",
       "mcp__ruflo__agent_spawn",
-      "Skill(update-config)"
+      "Skill(update-config)",
+      "mcp__notebooklm-mcp__notebook_list"
     ]
   },
   "enableAllProjectMcpServers": true,
