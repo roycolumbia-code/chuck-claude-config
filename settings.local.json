@@ -37,7 +37,9 @@
       "mcp__ruflo__agent_spawn",
       "Skill(update-config)",
       "mcp__notebooklm-mcp__notebook_list",
-      "mcp__notebooklm-mcp__notebook_query"
+      "mcp__notebooklm-mcp__notebook_query",
+      "mcp__plugin_playwright_playwright__browser_run_code",
+      "mcp__plugin_playwright_playwright__browser_press_key"
     ]
   },
   "enableAllProjectMcpServers": true,
