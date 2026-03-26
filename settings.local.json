@@ -42,7 +42,8 @@
       "mcp__plugin_playwright_playwright__browser_press_key",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:github.com)",
-      "mcp__claude-flow__browser_open"
+      "mcp__claude-flow__browser_open",
+      "mcp__plugin_playwright_playwright__browser_type"
     ]
   },
   "enableAllProjectMcpServers": true,
