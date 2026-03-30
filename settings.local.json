@@ -47,7 +47,13 @@
       "WebSearch",
       "mcp__claude_ai_Google_Calendar__gcal_list_events",
       "WebFetch(domain:terraink.app)",
-      "WebFetch(domain:www.instagram.com)"
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:klingai.com)",
+      "WebFetch(domain:muapi.io)",
+      "WebFetch(domain:www.reddit.com)",
+      "WebFetch(domain:kling26.online)",
+      "WebFetch(domain:runwayml.com)",
+      "WebFetch(domain:pika.art)"
     ]
   },
   "enableAllProjectMcpServers": true,
