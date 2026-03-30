@@ -53,7 +53,8 @@
       "WebFetch(domain:www.reddit.com)",
       "WebFetch(domain:kling26.online)",
       "WebFetch(domain:runwayml.com)",
-      "WebFetch(domain:pika.art)"
+      "WebFetch(domain:pika.art)",
+      "Skill(media)"
     ]
   },
   "enableAllProjectMcpServers": true,
