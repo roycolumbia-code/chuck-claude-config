@@ -54,7 +54,8 @@
       "WebFetch(domain:kling26.online)",
       "WebFetch(domain:runwayml.com)",
       "WebFetch(domain:pika.art)",
-      "Skill(media)"
+      "Skill(media)",
+      "mcp__plugin_playwright_playwright__browser_file_upload"
     ]
   },
   "enableAllProjectMcpServers": true,
