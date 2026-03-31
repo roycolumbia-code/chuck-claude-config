@@ -26,25 +26,44 @@ Sono **escluse** le novità puramente tecniche/developer (es. testing framework,
 
 Quando Roy digita `/newsclaude`:
 
-### Step 1 — Ricerca parallela (3 fonti)
+### Step 1 — Ricerca parallela (4 fonti)
 
 Esegui in parallelo le seguenti ricerche con `Bash` usando `opencli`:
 
-**Fonte A — Google (plugin/skill nuovi):**
+**Fonte A — Anthropic Ufficiale (PRIORITÀ MASSIMA — sempre inclusa):**
+Usa `WebFetch` o `curl` per leggere il changelog ufficiale e le release notes:
 ```bash
-opencli google search "claude code new plugin skill 2025 site:github.com"
-opencli google search "claude code plugin marketplace new 2025"
+# Changelog Claude Code (aggiornamenti, nuove feature, modelli)
+curl -s "https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md" | head -100
+# Oppure tramite GitHub API
+curl -s "https://api.github.com/repos/anthropics/claude-code/releases?per_page=5"
+```
+Cerca anche con WebFetch: `https://docs.anthropic.com/en/release-notes/claude-code`
+Questi risultati vanno in cima all'output con sezione dedicata **"📣 Aggiornamenti Ufficiali Anthropic"**.
+
+**Fonte B — Google (plugin/skill nuovi):**
+```bash
+opencli google search "claude code new plugin skill site:github.com"
+opencli google search "claude code plugin marketplace new"
 ```
 
-**Fonte B — Hacker News (discussioni e annunci):**
+**Fonte C — Hacker News (discussioni e annunci):**
 ```bash
 opencli hackernews search "claude code"
+opencli hackernews search "claude code plugin"
+```
+Per ogni risultato HN interessante, recupera l'URL originale via HN Algolia API:
+```bash
+curl -s "https://hn.algolia.com/api/v1/search?query=<titolo>&tags=story" | python3 -c "import json,sys; d=json.load(sys.stdin); [print(h.get('url','no-url'), '|', h.get('title','')) for h in d.get('hits',[])]"
 ```
 
-**Fonte C — GitHub diretto (repo ad alto engagement recenti):**
-Usa `WebFetch` su questi URL di ricerca GitHub per trovare repo con molte star:
-- `https://github.com/search?q=claude+code+plugin&sort=stars&type=repositories`
-- `https://github.com/ComposioHQ/awesome-claude-plugins`
+**Fonte D — GitHub diretto (repo ad alto engagement recenti):**
+Usa l'API GitHub per verificare stella count e descrizione:
+```bash
+curl -s "https://api.github.com/repos/<owner>/<repo>" | python3 -c "import json,sys; d=json.load(sys.stdin); print('Stars:', d.get('stargazers_count'), '| Desc:', d.get('description'))"
+```
+URL di riferimento:
+- `https://github.com/topics/claude-code-plugin` (via WebFetch)
 - `https://github.com/jeremylongshore/claude-code-plugins-plus-skills`
 
 ### Step 2 — Analisi e filtraggio
@@ -62,19 +81,24 @@ Presenta i risultati in questa forma:
 ```
 ## 🆕 Novità Claude Code — [data]
 
+### 📣 Aggiornamenti Ufficiali Anthropic
+(sempre presente, anche se vuoto — indicare "nessuna novità da ultimo check")
+- **v[X.Y.Z]** — [data] | [sintesi cambiamento in 1 riga]
+...
+
 ### Plugin / Skill da valutare
 
-| # | Nome | Cosa fa | Area | Stelle | Priorità | Già installato? |
-|---|------|---------|------|--------|----------|-----------------|
-| 1 | ... | ... | ... | ⭐ N | 🔴 Alta | No |
+| # | Nome | Repo | Cosa fa | Area | ⭐ Stars | Priorità | Installato? |
+|---|------|------|---------|------|---------|----------|-------------|
+| 1 | ... | github.com/... | ... | ... | N | 🔴 Alta | No |
 ...
 
 ### Discussioni interessanti (HN / community)
-- **[Titolo]** — Score: N | [breve sintesi 1 riga]
+- **[Titolo]** — Score: N | [breve sintesi 1 riga] | [link repo se trovato]
 ...
 
 ### Come installare un plugin
-Per installare: `/plugin install <nome>@<marketplace>`
+Per installare: `/plugin install <nome>@<marketplace>` oppure `marketplace add <owner>/<repo>`
 Per valutare prima: chiedi a Roy "vuoi che lo installi?"
 ```
 
