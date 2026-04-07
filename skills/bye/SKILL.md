@@ -33,13 +33,31 @@ in MEMORY.md e scrivi una nota sessione minima.
 **Obiettivo**: capire cosa ha fatto Roy oggi attraverso le email che ha inviato,
 e aggiornare la conoscenza del vault di conseguenza.
 
-### 2a — Cerca mail inviate oggi su Outlook
+### 2a — Naviga alla cartella Posta Inviata di Outlook Web
 
-Usa `mcp__claude_ai_ms365__outlook_email_search` con:
-- `query`: "" (tutte)
-- `sender`: "roy@columbiatransport.it"
-- `afterDateTime`: inizio giornata odierna (YYYY-MM-DDT00:00:00)
-- `limit`: 20
+> **Nota**: MS365 MCP non funziona (OAuth redirect URI dinamici non registrati in Azure).
+> Usa **Playwright MCP** per navigare Outlook Web con la sessione Chrome già attiva.
+
+1. Naviga alla Posta Inviata:
+   ```
+   mcp__plugin_playwright_playwright__browser_navigate
+   url: "https://outlook.office.com/mail/sentitems"
+   ```
+
+2. Prendi uno snapshot per vedere l'elenco email:
+   ```
+   mcp__plugin_playwright_playwright__browser_snapshot
+   ```
+   Se la pagina chiede login → esegui login con:
+   - URL login: `https://outlook.office.com`
+   - Account: `roy@columbiatransport.it`
+   Se la sessione è già attiva (probabile), la posta inviata carica direttamente.
+
+3. Dall'accessibility tree, leggi le righe email visibili: oggetto, destinatario, ora.
+   Filtra solo quelle di oggi (data corrente).
+
+4. Per ogni email rilevante, aprila con un click (usa il ref del nodo) e prendi uno
+   snapshot per leggere il corpo completo, poi torna indietro (`browser_navigate_back`).
 
 ### 2b — Analizza le mail
 
@@ -89,9 +107,9 @@ Per verificare: controlla la data corrente con `date +%A` o ragiona sulla data n
 
 ### 3a — Raccogli dati settimana
 
-Cerca mail inviate nell'intera settimana lavorativa (lunedì → venerdì):
-- `mcp__claude_ai_ms365__outlook_email_search` con `afterDateTime` = lunedì mattina
-- `limit`: 50
+Naviga alla Posta Inviata su Outlook Web (vedi Step 2a) e scorri le email
+dell'intera settimana lavorativa (lunedì → venerdì). Usa `browser_scroll` per
+caricare più email se necessario. Filtra per data (da lunedì mattina a oggi).
 
 Leggi anche le note sessione della settimana in `~/chuck/IIB/0-Inbox/Claude/`:
 - Cartelle dalla data del lunedì a oggi
