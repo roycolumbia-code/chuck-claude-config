@@ -57,7 +57,14 @@
       "Skill(media)",
       "mcp__plugin_playwright_playwright__browser_file_upload",
       "Skill(schedule)",
-      "mcp__claude_ai_Slack__slack_send_message"
+      "mcp__claude_ai_Slack__slack_send_message",
+      "mcp__plugin_sales_gmail__gmail_search_messages",
+      "mcp__plugin_sales_gmail__gmail_get_profile",
+      "mcp__plugin_sales_gmail__gmail_read_message",
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:youtu.be)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:vxtwitter.com)"
     ]
   },
   "enableAllProjectMcpServers": true,
