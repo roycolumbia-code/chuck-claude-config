@@ -64,7 +64,8 @@
       "WebFetch(domain:x.com)",
       "WebFetch(domain:youtu.be)",
       "WebFetch(domain:www.youtube.com)",
-      "WebFetch(domain:vxtwitter.com)"
+      "WebFetch(domain:vxtwitter.com)",
+      "mcp__plugin_superpowers-chrome_chrome__use_browser"
     ]
   },
   "enableAllProjectMcpServers": true,
