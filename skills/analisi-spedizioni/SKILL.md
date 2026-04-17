@@ -7,7 +7,7 @@ description: Analizza il file sped.xlsx con dati spedizioni 2025 Columbia Transp
 
 ## File Sorgente
 ```
-Path: /Users/royrigamonti/chuck/genova/sped.xlsx
+Path: /Users/royrigamonti/Chuck/Lacage/sped.xlsx
 Sheet: Sheet1
 Righe: 4.163 (+ 1 header) — anno 2025
 ```
@@ -84,7 +84,7 @@ Righe: 4.163 (+ 1 header) — anno 2025
 
 ```python
 import openpyxl
-wb = openpyxl.load_workbook('/Users/royrigamonti/chuck/genova/sped.xlsx')
+wb = openpyxl.load_workbook('/Users/royrigamonti/Chuck/Lacage/sped.xlsx')
 ws = wb['Sheet1']
 rows = list(ws.iter_rows(min_row=2, values_only=True))
 
