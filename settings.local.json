@@ -68,7 +68,8 @@
       "mcp__plugin_superpowers-chrome_chrome__use_browser",
       "mcp__claude_ai_Gmail__search_threads",
       "mcp__claude_ai_Gmail__get_thread",
-      "mcp__claude_ai_Gmail__unlabel_thread"
+      "mcp__claude_ai_Gmail__unlabel_thread",
+      "mcp__superhuman-mail__list_threads"
     ]
   },
   "enableAllProjectMcpServers": true,
