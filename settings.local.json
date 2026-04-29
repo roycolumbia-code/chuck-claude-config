@@ -69,7 +69,8 @@
       "mcp__claude_ai_Gmail__search_threads",
       "mcp__claude_ai_Gmail__get_thread",
       "mcp__claude_ai_Gmail__unlabel_thread",
-      "mcp__superhuman-mail__list_threads"
+      "mcp__superhuman-mail__list_threads",
+      "mcp__superhuman-mail__create_or_update_draft"
     ]
   },
   "enableAllProjectMcpServers": true,
