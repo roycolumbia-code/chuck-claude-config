@@ -19,7 +19,7 @@
       "mcp__claude_ai_Gmail__gmail_search_messages",
       "mcp__plugin_slack_slack__slack_send_message",
       "mcp__claude_ai_Google_Calendar__gcal_create_event",
-      "Bash(strings \"/Users/royrigamonti/chuck/montreal/Air Canada - 15 Mar 2026: Milan - Montréal \\(Booking reference: AZMUYI\\) • roy@columbiatransport.it.pdf\" | grep -E \"\\(flight|Flight|volo|AZMUYI|depart|arriv|YUL|MXP|LIN|BGY|FCO|AC[0-9]|time|Time|gate|Gate|seat|Seat|class|Class|baggage|Baggage|economy|Economy|business|Business|terminal|Terminal|check\\)\" | head -50)",
+      "Bash(strings \"/Users/royrigamonti/chuck/montreal/Air Canada - 15 Mar 2026: Milan - Montr\u00e9al \\(Booking reference: AZMUYI\\) \u2022 roy@columbiatransport.it.pdf\" | grep -E \"\\(flight|Flight|volo|AZMUYI|depart|arriv|YUL|MXP|LIN|BGY|FCO|AC[0-9]|time|Time|gate|Gate|seat|Seat|class|Class|baggage|Baggage|economy|Economy|business|Business|terminal|Terminal|check\\)\" | head -50)",
       "mcp__plugin_playwright_playwright__browser_navigate",
       "mcp__plugin_playwright_playwright__browser_fill_form",
       "mcp__plugin_playwright_playwright__browser_click",
@@ -32,9 +32,6 @@
       "Bash(pkill -x \"Google Chrome\" && sleep 2 && echo \"Chrome chiuso\")",
       "Bash(uvx --from git+https://github.com/oraios/serena serena start-mcp-server --help 2>/dev/null | head -30)",
       "Bash(grep -r \"beone\\\\|qlik\\\\|beonanalytics\\\\|analytics\" /Users/royrigamonti/chuck --include=\"*.md\" --include=\"*.txt\" --include=\"*.py\" --include=\"*.sh\" -l 2>/dev/null | head -10)",
-      "mcp__ruflo__system_status",
-      "mcp__ruflo__swarm_init",
-      "mcp__ruflo__agent_spawn",
       "Skill(update-config)",
       "mcp__notebooklm-mcp__notebook_list",
       "mcp__notebooklm-mcp__notebook_query",
@@ -42,7 +39,6 @@
       "mcp__plugin_playwright_playwright__browser_press_key",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:github.com)",
-      "mcp__claude-flow__browser_open",
       "mcp__plugin_playwright_playwright__browser_type",
       "WebSearch",
       "mcp__claude_ai_Google_Calendar__gcal_list_events",
@@ -75,8 +71,5 @@
       "mcp__voicebox__voicebox_speak"
     ]
   },
-  "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": [
-    "claude-flow"
-  ]
+  "enableAllProjectMcpServers": true
 }
