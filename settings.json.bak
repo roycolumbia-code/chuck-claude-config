@@ -44,6 +44,17 @@
         ]
       }
     ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'exec node \"${CLAUDE_PROJECT_DIR:-.}/.claude/helpers/hook-handler.cjs\" route'",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
     "SessionStart": [
       {
         "hooks": [
@@ -164,7 +175,7 @@
   },
   "attribution": {
     "commit": "Co-Authored-By: claude-flow <ruv@ruv.net>",
-    "pr": "\ud83e\udd16 Generated with [claude-flow](https://github.com/ruvnet/claude-flow)"
+    "pr": "🤖 Generated with [claude-flow](https://github.com/ruvnet/claude-flow)"
   },
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
