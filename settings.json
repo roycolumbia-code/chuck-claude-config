@@ -11,5 +11,18 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "400000"
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "for f in $CLAUDE_FILE_PATHS; do case \"$f\" in *.py) python3 -m py_compile \"$f\" 2>&1 && echo \"OK py_compile: $f\" || echo \"FAIL py_compile: $f\";; esac; done; true"
+          }
+        ]
+      }
+    ]
   }
 }
