@@ -20,7 +20,7 @@ description: Pattern operativi Columbia per lavorare su file dati grandi (sped.x
 ## Save-output-to-file
 
 - Search email > 50 risultati → salva JSON in `/tmp/search-YYYYMMDD.json`, ritorna path. Poi grep mirato.
-- Vale per: `/cerca-mail`, `/follow-up`, dump xlsx, scraping web.
+- Vale per: `/mail`, `/follow-up`, dump xlsx, scraping web.
 - Regola generale: tool/sub-agent che ritorna >50 righe → scrivi su file, ritorna path + 5 righe di preview.
 
 ## /clear non /compact

@@ -106,4 +106,3 @@ Dopo l'aggiornamento:
 - Timeout per operazioni npm: se un comando npx impiega >60s, skip e nota
 - Plugin con scope `managed` (da marketplace ufficiale): aggiornabili normalmente
 - Plugin con scope `local` (path fisso): skip — non aggiornabili via CLI
-- ruFlo usa `@latest` in Chuck/.mcp.json: l'aggiornamento reale avviene svuotando la cache npx

@@ -41,7 +41,7 @@ Quando Roy vuole aggiungere funzionalità a /bye, aggiungi un nuovo blocco:
 ```
 
 Idee future possibili:
-- STEP 2: Leggi mail inviate oggi via MS365 MCP (`mcp__plugin_sales_ms365__*`) — token OAuth attivo, account `columb16@columbiatransport.it`
+- STEP 2: Leggi mail inviate oggi via MS365 MCP (`mcp__claude_ai_ms365__*`) — token OAuth attivo, account `columb16@columbiatransport.it`
 - STEP 3: Report settimanale (solo venerdì) — analisi mail + note sessioni settimana
 - STEP 4: Aggiorna calendario Google con recap giornata
 - STEP 5: Controlla todo aperti in MEMORY.md e segnala quelli scaduti

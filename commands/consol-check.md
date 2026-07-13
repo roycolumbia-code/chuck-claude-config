@@ -30,4 +30,4 @@ Totale: X shipper confermati, Y CBM stimati
 
 4. Se ci sono problemi aperti o azioni pendenti, elencali in fondo.
 
-**Nota**: Questo è un check rapido. Per il cargo list completo con file HTML, usa la skill `consol`.
+**Nota**: Questo è un check rapido. Per il cargo list completo con file HTML, ricostruisci dalle email operative (le più recenti vincono) e salva l'HTML in `~/Chuck/Genova/`. (La vecchia skill `consol` è archiviata in `~/.claude/skills/_archived/`.)
