@@ -1,6 +1,6 @@
 ---
 name: "Skill Builder"
-description: "Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generate skill templates, or understand the Claude Skills specification."
+description: Crea nuove skill Claude Code con frontmatter YAML corretto, progressive disclosure e struttura directory completa. Usare per costruire skill custom o capire la spec Skills.
 ---
 
 # Skill Builder

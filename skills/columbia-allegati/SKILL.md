@@ -1,6 +1,6 @@
 ---
 name: columbia-allegati
-description: Procedura per allegare file a una bozza email Superhuman/Outlook via Microsoft Graph. Usare quando serve mandare un PDF/xlsx insieme a una bozza (CPSC, quotazioni, report), o quando stai per dire che "gli allegati non si possono fare" — si possono.
+description: Allegare file a una bozza Superhuman/Outlook via Microsoft Graph. Usare per mandare PDF/xlsx con una bozza (CPSC, quotazioni, report) — e quando stai per dire che "gli allegati non si possono fare": si può.
 ---
 
 # Allegati alle bozze email — SI PUÒ FARE

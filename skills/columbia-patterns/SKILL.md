@@ -1,6 +1,6 @@
 ---
 name: columbia-patterns
-description: Pattern operativi Columbia per lavorare su file dati grandi (sped.xlsx, cargo), batch di consol/clienti, ricerche email voluminose e sessioni lunghe. Usare prima di parsare un xlsx sopra le 1k righe, prima di lanciare un batch di sub-agenti, o quando il contesto della sessione si gonfia.
+description: Pattern operativi Columbia: xlsx grandi → SQLite, batch di sub-agenti, ricerche email voluminose, sessioni lunghe. Leggere PRIMA di parsare un xlsx >1k righe o lanciare un batch.
 ---
 
 # Pattern Operativi Columbia (Workshop Anthropic 2026-01-05)
