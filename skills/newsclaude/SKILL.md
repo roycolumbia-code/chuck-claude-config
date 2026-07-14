@@ -1,3 +1,8 @@
+---
+name: newsclaude
+description: Ricognizione novità ecosistema Claude Code (plugin, skill, tool, feature community) filtrata sugli interessi di Roy; analizza anche contenuti che Roy inoltra (articolo, video, thread X, newsletter) e propone migliorie al suo setup. Usare quando Roy scrive /newsclaude o inoltra un contenuto Claude Code da valutare.
+---
+
 # Skill: /newsclaude
 
 Esegui una ricognizione delle novità più rilevanti nell'ecosistema Claude Code: nuovi plugin, skill, tool e funzionalità discusse dalla community. Filtra e presenta solo ciò che è rilevante per Roy (vedi profilo interessi sotto).

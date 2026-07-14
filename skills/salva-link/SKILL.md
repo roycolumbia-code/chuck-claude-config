@@ -1,3 +1,8 @@
+---
+name: salva-link
+description: Salva un link interessante (social, YouTube, blog) in una raccolta markdown centralizzata per consultarlo dopo. Usare quando Roy dice "/salva-link", "salva questo link", "metti da parte questo", o incolla un URL da archiviare.
+---
+
 # Skill: Salva Link
 
 Questa skill gestisce una raccolta personale di link interessanti trovati su social media, YouTube, blog, ecc. I link vengono salvati in un file markdown centralizzato per essere consultati e valutati in seguito.

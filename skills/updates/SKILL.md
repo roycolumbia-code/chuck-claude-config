@@ -1,3 +1,8 @@
+---
+name: updates
+description: Aggiorna in autonomia tutti i componenti del setup Claude Code di Roy — plugin installati, tool CLI via brew, MCP server via npx — poi mostra il summary. Usare quando Roy scrive /updates o chiede di aggiornare plugin/tool/MCP.
+---
+
 # Skill: /updates
 
 Verifica e aggiorna autonomamente tutti i componenti del sistema Claude Code di Roy:
