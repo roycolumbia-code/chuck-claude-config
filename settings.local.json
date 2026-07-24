@@ -69,7 +69,9 @@
       "mcp__superhuman-mail__create_or_update_draft",
       "mcp__superhuman-mail__get_thread",
       "mcp__voicebox__voicebox_speak",
-      "Bash(cd *)"
+      "Bash(cd *)",
+      "Bash(mkdir *)",
+      "Bash(curl *)"
     ]
   },
   "enableAllProjectMcpServers": true
