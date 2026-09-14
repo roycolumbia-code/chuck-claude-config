@@ -37,13 +37,15 @@ Riferimento originale: `~/chuck/vanessa-routine/watch.py` → `attach_to_draft()
 
 Superhuman tiene una **copia propria** della bozza. L'allegato agganciato via Graph vive solo sulla copia Outlook: `get_draft` continua a mostrare le sole immagini inline della firma, e **inviando da Superhuman parte la sua copia, senza allegato e senza errori**. Così è partita vuota la risposta a Selecover delle 12:04.
 
-Regola decisa da Roy: **quando serve un allegato, l'invio lo fa Claude via Graph.**
+**Regola: la bozza con allegato nasce su Graph, non in Superhuman.** Il verso Graph → Superhuman funziona (verificato 2026-09-14: bozza Graph con allegato vista in Superhuman, inviata da lì, file arrivato intatto). Rotto è solo il verso opposto.
 
 ```python
-# 1. bozza (MCP create_or_update_draft) → 2. POST /me/messages/{id}/attachments
-# 3. chiedi l'ok a Roy → 4. invia:
+# 1. bozza su Graph: POST /me/messages, oppure createReply/createForward per restare nel thread
+# 2. POST /me/messages/{id}/attachments   (conta solo isInline:false)
+# 3. Roy la rivede in Superhuman e la invia lui — l'allegato regge.
+#    Se invia Claude, dopo l'ok di Roy:
 requests.post(f"{G}/me/messages/{mid}/send", headers=h)   # 202
 ```
-Poi `discard_draft` sulla copia Superhuman (altrimenti resta un doppione senza allegato) e verifica in `sentitems` che l'allegato risulti con `isInline:false`.
+Se la bozza era nata in Superhuman, dopo l'invio via Graph fai `discard_draft` sulla copia Superhuman (altrimenti resta un doppione senza allegato) e verifica in `sentitems`.
 
-Vale anche per le automazioni che nascono già su Graph, tipo il contratto MSC a Francesca Pucci (`~/chuck/MSC/msc_flow.py`): la bozza è corretta, ma va inviata via Graph.
+Le automazioni che nascono già su Graph — contratto MSC a Francesca Pucci, `~/chuck/MSC/msc_flow.py` — sono a posto così: Roy può inviarle dalla sua UI.
