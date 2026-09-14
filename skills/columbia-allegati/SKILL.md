@@ -29,6 +29,21 @@ Lo script si ferma da solo se la bozza ha già allegati reali, e **non invia mai
 - **Modificare il body di una bozza che ha già allegati**: `PATCH /me/messages/{id}` sul solo campo `body`. Ricrearla via MCP li cancella.
 - **Contare gli allegati escludendo `isInline=True`**: il logo della firma è un attachment inline e falsa i conteggi.
 - Limite `contentBytes` inline: ~3 MB per file.
-- L'allegato appare in Superhuman con **lag di sync**: non concludere che è fallito se la UI non lo mostra subito.
+- **L'allegato non compare nella bozza Superhuman, e da lì non parte** (vedi sotto).
 
 Riferimento originale: `~/chuck/vanessa-routine/watch.py` → `attach_to_draft()` (sul mini).
+
+## L'invio va fatto via Graph, non dalla UI Superhuman (2026-09-14)
+
+Superhuman tiene una **copia propria** della bozza. L'allegato agganciato via Graph vive solo sulla copia Outlook: `get_draft` continua a mostrare le sole immagini inline della firma, e **inviando da Superhuman parte la sua copia, senza allegato e senza errori**. Così è partita vuota la risposta a Selecover delle 12:04.
+
+Regola decisa da Roy: **quando serve un allegato, l'invio lo fa Claude via Graph.**
+
+```python
+# 1. bozza (MCP create_or_update_draft) → 2. POST /me/messages/{id}/attachments
+# 3. chiedi l'ok a Roy → 4. invia:
+requests.post(f"{G}/me/messages/{mid}/send", headers=h)   # 202
+```
+Poi `discard_draft` sulla copia Superhuman (altrimenti resta un doppione senza allegato) e verifica in `sentitems` che l'allegato risulti con `isInline:false`.
+
+Vale anche per le automazioni che nascono già su Graph, tipo il contratto MSC a Francesca Pucci (`~/chuck/MSC/msc_flow.py`): la bozza è corretta, ma va inviata via Graph.
