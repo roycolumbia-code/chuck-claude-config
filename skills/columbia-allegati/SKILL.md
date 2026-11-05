@@ -28,7 +28,7 @@ Lo script si ferma da solo se la bozza ha già allegati reali, e **non invia mai
 - **Auth Graph solo sul mini**: `m365_auth.py` sta in `~/chuck/mail-triage/`, NON sincronizzato via iCloud. Gira con `/opt/anaconda3/bin/python3` — il `python3` di sistema è il 3.9 e non ha `msal`.
 - **Modificare il body di una bozza che ha già allegati**: `PATCH /me/messages/{id}` sul solo campo `body`. Ricrearla via MCP li cancella.
 - **Contare gli allegati escludendo `isInline=True`**: il logo della firma è un attachment inline e falsa i conteggi.
-- Limite `contentBytes` inline: ~3 MB per file.
+- Limite `contentBytes` inline: ~3 MB per file. Oltre, `graph_draft.py --attach` passa da sé a `createUploadSession` (dal 05/11/2026, video consol 35 da 4,5 MB a Domenico).
 - **L'allegato non compare nella bozza Superhuman, e da lì non parte** (vedi sotto).
 
 Riferimento originale: `~/chuck/vanessa-routine/watch.py` → `attach_to_draft()` (sul mini).
